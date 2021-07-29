@@ -1,0 +1,44 @@
+CREATE TABLE customer (
+	Customer_Name VARCHAR(255) NOT NULL PRIMARY KEY,
+	customer_ID VARCHAR(18) NOT NULL,
+	Customer_Open_Date DATE NOT NULL,
+	Last_Consulted_Date DATE,
+	Vaccination_type CHAR(5),
+	Doctor_Consulted VARCHAR(255),
+	State VARCHAR(5),
+	Country VARCHAR(5),
+	Post_Code int,
+	Date_Of_Birth DATE,
+	Active_Customer VARCHAR(1)
+)
+
+
+INSERT INTO customer (Customer_Name,customer_ID,Customer_Open_Date,Last_Consulted_Date,Vaccination_type,Doctor_Consulted,State,Country,Date_Of_Birth,Active_Customer) 
+VALUES 
+	('Alex','123457','2010-10-12','2012-10-13','MVD','Paul','SA','USA','1987-06-03','A'),
+	('John','123458','2010-10-12','2012-10-13','MVD','Paul','TN','IND','1987-06-03','A'),
+	('Mathew','123459','2010-10-12','2012-10-13','MVD','Paul','WAS','PHIL','1987-06-03','A'),
+	('Matt','12345','2010-10-12','2012-10-13','MVD','Paul','BOS','NYC','1987-06-03','A'),
+	('Jacob','1256','2010-10-12','2012-10-13','MVD','Paul','VIC','AU','1987-06-03','A');
+
+SELECT * FROM customer	
+	
+CREATE TABLE INDIA (
+	Customer_Name VARCHAR(255) NOT NULL,
+	customer_ID VARCHAR(18) NOT NULL,
+	Customer_Open_Date DATE NOT NULL,
+	Last_Consulted_Date DATE,
+	Vaccination_type CHAR(5),
+	Doctor_Consulted VARCHAR(255),
+	State VARCHAR(5),
+	Country VARCHAR(5),
+	Post_Code int,
+	Date_Of_Birth DATE,
+	Active_Customer VARCHAR(1)
+)
+
+INSERT into INDIA
+SELECT * from Customer WHERE country='IND';
+
+
+SELECT * FROM INDIA
